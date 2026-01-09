@@ -51,8 +51,7 @@ html[data-theme="dark"] {
 }
 
 @utility max-w-app {
-  /* @apply max-w-3xl; */
-   @apply max-w-4xl;
+  @apply max-w-3xl;
 }
 
 @utility app-layout {
@@ -67,65 +66,4 @@ html[data-theme="dark"] {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
-}
-
-/* ---------------- */
-
-/* 目录容器样式 */
-.toc-aside {
-  position: fixed;
-  right: 90px;
-  top: 100px;
-  width: 250px;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  background-color: var(--background);
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 100;
-}
-
-/* 目录标题样式 */
-.toc-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--border);
-}
-
-/* 目录列表样式 */
-.toc-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.toc-list li {
-  margin: 5px 0;
-}
-
-/* 目录链接样式 */
-.toc-link {
-  display: block;
-  color: var(--foreground);
-  text-decoration: none;
-  padding: 3px 0;
-  transition: color 0.2s;
-}
-
-.toc-link:hover {
-  color: var(--accent);
-}
-
-.toc-link.active {
-  color: var(--accent);
-  font-weight: bold;
-}
-
-/* 响应式设计 */
-@media (max-width: 1024px) {
-  .toc-aside {
-    display: none;
-  }
 }

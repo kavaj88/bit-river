@@ -40,10 +40,6 @@ if (breadcrumbList[0] === "tags" && breadcrumbList.length > 1) {
     );
   }
 }
-
-if (breadcrumbList[0] === "about") {
-  breadcrumbList[0] = "关于";
-}
 ---
 
 <nav class="app-layout mt-8 mb-1" aria-label="breadcrumb">
@@ -69,7 +65,7 @@ if (breadcrumbList[0] === "about") {
         ) : (
           <li>
             <a
-              href={`/${breadcrumb === "标签" ? "tags" : breadcrumb === "关于" ? "about" : breadcrumb}/`}
+              href={`/${breadcrumb === "标签" ? "tags" : breadcrumb}/`}
               class="capitalize opacity-70"
             >
               {breadcrumb}

@@ -30,7 +30,7 @@ if (breadcrumbList[0] === "tags" && breadcrumbList.length === 1) {
 // replace "tags" with "标签" and keep tag name
 if (breadcrumbList[0] === "tags" && breadcrumbList.length > 1) {
   breadcrumbList[0] = "标签";
-
+  
   // If there's a page number, format it
   if (!isNaN(Number(breadcrumbList[2]))) {
     breadcrumbList.splice(
@@ -41,9 +41,6 @@ if (breadcrumbList[0] === "tags" && breadcrumbList.length > 1) {
   }
 }
 
-if (breadcrumbList[0] === "about") {
-  breadcrumbList[0] = "关于";
-}
 ---
 
 <nav class="app-layout mt-8 mb-1" aria-label="breadcrumb">
@@ -68,10 +65,7 @@ if (breadcrumbList[0] === "about") {
           </li>
         ) : (
           <li>
-            <a
-              href={`/${breadcrumb === "标签" ? "tags" : breadcrumb === "关于" ? "about" : breadcrumb}/`}
-              class="capitalize opacity-70"
-            >
+            <a href={`/${breadcrumb}/`} class="capitalize opacity-70">
               {breadcrumb}
             </a>
             <span aria-hidden="true">&raquo;</span>

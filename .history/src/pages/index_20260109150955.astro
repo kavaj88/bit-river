@@ -22,9 +22,9 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-6 pb-6", "border-b border-border"]}>
+    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        你好, 朋友!
+        Mingalaba
       </h1>
       <a
         target="_blank"
@@ -42,17 +42,20 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </a>
 
       <p>
-        击水飞舟 -
-        一个在职场摸爬滚打十余年的程序员。曾以为技术过硬就能一路坦途，后来才懂职场不只有0和1，还有躲不开的<b
-          >弯弯绕绕</b
-        >。被师傅带进门的欣喜,被小人绊脚的委屈、深夜研究技术的平静、攻克难题时的狂喜，都是我走过的路。
-        <br />开这个博客:<br /><b>一是</b
-        >想把压箱底的技术经验攒下来，帮后来人少走弯路；<br /><b>二是</b
-        >想找个地方，说说程序员职场里那些没人明说的真心话, 怀念下引路人(伯乐),
-        扯下小人的淡; <br />
-        偶尔也会写写生活里的小确幸，给紧绷的日子松松绑。 如果你也是技术人，或正在职场里摸爬滚打，欢迎常来坐坐，咱们一起击水前行。
+        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
+        blog theme. This theme follows best practices and provides accessibility
+        out of the box. Light and dark mode are supported by default. Moreover,
+        additional color schemes can also be configured.
       </p>
-
+      <p class="mt-2">
+        Read the blog posts or check
+        <LinkButton
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+          href="https://github.com/satnaing/astro-paper#readme"
+        >
+          README
+        </LinkButton> for more info.
+      </p>
       {
         // only display if at least one social link is enabled
         SOCIALS.length > 0 && (
@@ -73,7 +76,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
             { "border-b border-border": recentPosts.length > 0 },
           ]}
         >
-          <h2 class="text-2xl font-semibold tracking-wide">置顶</h2>
+          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
           <ul>
             {featuredPosts.map(data => (
               <Card variant="h3" {...data} />
@@ -85,8 +88,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-6 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">最近</h2>
+        <section id="recent-posts" class="pt-12 pb-6">
+          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
           <ul>
             {recentPosts.map(
               (data, index) =>
@@ -97,7 +100,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       )
     }
 
-    <div class="my-2 text-center">
+    <div class="my-8 text-center">
       <LinkButton href="/posts/">
         All Posts
         <IconArrowRight class="inline-block rtl:-rotate-180" />
