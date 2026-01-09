@@ -1,42 +1,54 @@
-# AstroPaper 📄
+# 击水飞舟 📄
 
-![AstroPaper](public/astropaper-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
+![击水飞舟](public/astropaper-og.jpg)
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+击水飞舟博客是基于 [AstroPaper](https://github.com/satnaing/astro-paper) 主题的中文博客，针对中文用户进行了深度定制和优化。本博客主要分享AI、技术、生活、职场相关的文章，由一位在职场摸爬滚打十余年的程序员维护。
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+> **原项目与当前版本的主要区别**：
+> - 本项目基于 [AstroPaper](https://github.com/satnaing/astro-paper) 开源主题，但已进行深度定制
+> - 语言本地化：将界面和内容完全中文化，符合中文阅读习惯
+> - 内容定位：聚焦于AI、技术、生活、职场相关内容，特别是程序员的职场经验分享
+> - 网站配置：已配置为中文环境，包括语言、时区、排版等
+> - **新增功能**：添加了右侧栏目录导航，提升长文章阅读体验
+> - **UI优化**：针对中文阅读习惯优化了界面布局和样式
 
-## 🔥 Features
+访问 [博客文章](https://blog.ai2me.qzz.io/posts/) 或查看 [README文档部分](#-文档) 了解更多信息。
 
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] fuzzy search
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
+## 🔥 特性
 
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
+- [x] 类型安全的 Markdown
+- [x] 极速性能
+- [x] 无障碍访问（键盘/屏幕阅读器）
+- [x] 响应式设计（移动端到桌面端）
+- [x] SEO 友好
+- [x] 明暗主题切换
+- [x] 模糊搜索
+- [x] 草稿文章与分页
+- [x] 网站地图与 RSS 订阅
+- [x] 遵循最佳实践
+- [x] 高度可定制
+- [x] 博客文章动态 OG 图像生成
+- [x] 右侧栏目录导航
 
-## ✅ Lighthouse Score
+> **注意**：本博客已针对中文环境进行了优化，包括但不限于：
+> - 中文排版优化
+> - 时区设置为亚洲/上海
+> - 语言设置为中文
+> - 内容本地化，符合中文阅读习惯
+> - 新增右侧栏目录导航，提升长文章阅读体验
+
+## ✅ Lighthouse 性能评分
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
+  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fblog.ai2me.qzz.io%2F&form_factor=desktop">
+    <img width="710" alt="击水飞舟 Lighthouse 评分" src="AstroPaper-lighthouse-score.svg">
   <a>
 </p>
 
-## 🚀 Project Structure
+## 🚀 项目结构
 
 Inside of AstroPaper, you'll see the following folders and files:
 
@@ -67,20 +79,22 @@ Inside of AstroPaper, you'll see the following folders and files:
 └── astro.config.ts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro 会在 `src/pages/` 目录中查找 `.astro` 或 `.md` 文件。每个页面根据其文件名作为路由暴露。
 
-Any static assets, like images, can be placed in the `public/` directory.
+任何静态资源（如图片）可以放置在 `public/` 目录中。
 
-All blog posts are stored in `src/data/blog` directory.
+所有博客文章都存储在 `src/data/blog` 目录中。
 
 ## 📖 Documentation
 
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
+文档可以通过两种格式阅读：_markdown_ 和 _博客文章_。
 
-- Configuration - [markdown](src/data/blog/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/data/blog/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/data/blog/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/data/blog/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
+> **注意**：以下文档链接来自原项目，部分内容可能需要根据本项目实际情况调整。
+
+- 配置 - [markdown](https://github.com/satnaing/astro-paper/blob/main/src/data/blog/how-to-configure-astropaper-theme.md) | [博客文章](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
+- 添加文章 - [markdown](https://github.com/satnaing/astro-paper/blob/main/src/data/blog/adding-new-post.md) | [博客文章](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
+- 自定义配色方案 - [markdown](https://github.com/satnaing/astro-paper/blob/main/src/data/blog/customizing-astropaper-theme-color-schemes.md) | [博客文章](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
+- 预定义配色方案 - [markdown](https://github.com/satnaing/astro-paper/blob/main/src/data/blog/predefined-color-schemes.md) | [博客文章](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
 
 ## 💻 Tech Stack
 
@@ -167,14 +181,14 @@ All commands are run from the root of the project, from a terminal:
 
 > **_Warning!_** Windows PowerShell users may need to install the [concurrently package](https://www.npmjs.com/package/concurrently) if they want to [run diagnostics](https://docs.astro.build/en/reference/cli-reference/#astro-check) during development (`astro check --watch & astro dev`). For more info, see [this issue](https://github.com/satnaing/astro-paper/issues/113).
 
-## ✨ Feedback & Suggestions
+## ✨ 反馈与建议
 
-If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
+如果您有任何建议/反馈，可以通过 [电子邮件](mailto:your-email@example.com) 联系我。或者，如果您发现错误或想要请求新功能，请随时提出 issue。
 
-## 📜 License
+## 📜 许可证
 
-Licensed under the MIT License, Copyright © 2025
+根据 MIT 许可证授权，版权所有 © 2025
 
 ---
 
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+由 [击水飞舟](https://blog.ai2me.qzz.io) 👨🏻‍💻 和 [贡献者](https://github.com/yourusername/your-repo-name/graphs/contributors) 用 🤍 制作。
