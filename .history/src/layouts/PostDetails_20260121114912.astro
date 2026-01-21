@@ -81,18 +81,6 @@ const currentPostIndex = allPosts.findIndex(a => a.id === post.id);
 const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =
   currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
-
-const getSlugFromPost = (post: CollectionEntry<"blog">) => {
-  if(post.data.slug) {
-    return post.data.slug;
-  }
-  // 从文件路径中提取 slug，例如 "posts/my-post.md" -> "my-post"
-  const filePath = post.filePath || post.id;
-  return filePath.replace(/\.md$/, "").split("/").pop() || post.id;
-};
-
-const slug = getSlugFromPost(post);
-console.log("slug是什么？:", slug);
 ---
 
 <Layout {...layoutProps}>
@@ -118,9 +106,7 @@ console.log("slug是什么？:", slug);
           { hidden: !SITE.editPost.enabled || hideEditPost },
         ]}>|</span
       >
-      <EditPost {hideEditPost} {post} class="max-sm:hidden" />
-      <span class="max-sm:hidden">|</span>
-      <ViewCounter slug={slug} />
+      <EditPost {hideEditPost} {post} class="max-sm:hidden" /> | 
     </div>
     <article
       id="article"

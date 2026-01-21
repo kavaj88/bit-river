@@ -10,6 +10,7 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
+import { db } from 'astro:db'; // 添加这行
 import db from "@astrojs/db";
 
 // https://astro.build/config

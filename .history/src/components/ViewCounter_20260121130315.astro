@@ -1,0 +1,37 @@
+---
+// src/components/ViewCounter.astro
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+
+console.log("传过来slug是什么？:", slug);
+
+// 定义一个异步函数来获取阅读数
+async function getViews() {
+  console.info("enter......");
+  try {
+    const requestUrl = new URL(Astro.request.url);
+    const siteUrl = `${requestUrl.protocol}//${requestUrl.host}`;
+    console.info("siteUrl:", siteUrl + "/api/views?slug=" + slug);
+    const apiUrl = new URL(`/api/views`, siteUrl);
+    apiUrl.searchParams.set("slug", slug);
+    console.info("apiUrl:", apiUrl.toString());
+    const res = await fetch(apiUrl.toString());
+    if (!res.ok) return 0; // 请求失败返回 0
+    const data = await res.json();
+    return data.views || 0;
+  } catch (error) {
+    console.error("Failed to fetch views:", error);
+    return 0;
+  }
+}
+
+// 在服务端渲染时获取阅读数
+const views = await getViews();
+---
+
+<span style="text-sm text-gray-500 dark:text-gray-400" data-slug={slug}>
+  {views} 次阅读
+</span>

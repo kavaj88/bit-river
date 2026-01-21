@@ -25,7 +25,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "wx",
-    href: "/contact/qrcode.jpg",
+    href: "./contact/qrcode.jpg",
     linkTitle: `${SITE.title} on WX`,
     icon: Wechat,
   },

@@ -6,7 +6,7 @@ import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
-import Wechat from "@/assets/icons/wechat.svg";
+import WXQr from "@/assets/contact/qrcode.jpg";
 import { SITE } from "@/config";
 
 interface Social {
@@ -25,9 +25,9 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "wx",
-    href: "/contact/qrcode.jpg",
+    href: `{ WXQr }`,
     linkTitle: `${SITE.title} on WX`,
-    icon: Wechat,
+    icon: IconBrandX,
   },
   // {
   //   name: "LinkedIn",

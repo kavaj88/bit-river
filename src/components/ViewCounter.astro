@@ -1,0 +1,23 @@
+---
+// src/components/ViewCounter.astro
+import { getAndIncrementViews } from "../../db/db.ts";
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+
+
+// 在服务端渲染时获取阅读数
+let views = 0;
+try {
+  views = await getAndIncrementViews(slug);
+} catch (error) {
+  console.error("Failed to get views:", error);
+}
+---
+
+<span style="text-sm text-gray-500 dark:text-gray-400" data-slug={slug}>
+  {views} 次阅读
+</span>

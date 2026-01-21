@@ -82,7 +82,7 @@
     document.body.appendChild(tocContainer);
 
     // 调试：检查目录是否成功添加
-    // console.log("目录容器已添加到页面", tocContainer);
+    console.log("目录容器已添加到页面", tocContainer);
 
     // 滚动时更新活动链接
     updateActiveLinkOnScroll(headings);

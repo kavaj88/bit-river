@@ -83,16 +83,12 @@ const nextPost =
   currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
 
 const getSlugFromPost = (post: CollectionEntry<"blog">) => {
-  if(post.data.slug) {
-    return post.data.slug;
-  }
   // 从文件路径中提取 slug，例如 "posts/my-post.md" -> "my-post"
   const filePath = post.filePath || post.id;
   return filePath.replace(/\.md$/, "").split("/").pop() || post.id;
 };
 
 const slug = getSlugFromPost(post);
-console.log("slug是什么？:", slug);
 ---
 
 <Layout {...layoutProps}>
