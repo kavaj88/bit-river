@@ -139,7 +139,7 @@ const slug = getSlugFromPost(post);
     <BackToTopButton />
 
     <ShareLinks />
-    <script
+    <!-- <script
       src="https://giscus.app/client.js"
       data-repo="kavaj88/bit-river"
       data-repo-id="R_kgDOQ2YT-A"
@@ -155,8 +155,8 @@ const slug = getSlugFromPost(post);
       data-lang="zh-CN"
       data-loading="lazy"
       crossorigin="anonymous"
-      async></script>
-
+      async></script> -->
+    <div id="giscus-container"></div>
     <hr class="my-6 border-dashed" />
 
     <!-- Previous/Next Post Buttons -->
@@ -309,51 +309,39 @@ const slug = getSlugFromPost(post);
   }
   attachCopyButtons();
 
-  function reinitializeGiscus() {
-    const giscusScript = document.querySelector(
-      'script[src*="giscus.app/client.js"]'
-    );
-    if (giscusScript) {
-      const newScript = document.createElement("script");
-      newScript.src = giscusScript.src;
-      newScript.setAttribute(
-        "data-repo",
-        giscusScript.getAttribute("data-repo")
-      );
-      newScript.setAttribute(
-        "data-repo-id",
-        giscusScript.getAttribute("data-repo-id")
-      );
-      newScript.setAttribute(
-        "data-category",
-        giscusScript.getAttribute("data-category")
-      );
-      newScript.setAttribute(
-        "data-category-id",
-        giscusScript.getAttribute("data-category-id")
-      );
-      newScript.setAttribute("data-mapping", "specific");
-      newScript.setAttribute(
-        "data-term",
-        window.location.pathname.split("/").pop()
-      );
-      newScript.setAttribute("data-strict", "0");
-      newScript.setAttribute("data-reactions-enabled", "1");
-      newScript.setAttribute("data-emit-metadata", "0");
-      newScript.setAttribute("data-input-position", "top");
-      newScript.setAttribute("data-theme", "preferred_color_scheme");
-      newScript.setAttribute("data-lang", "zh-CN");
-      newScript.setAttribute("data-loading", "lazy");
-      newScript.setAttribute("crossorigin", "anonymous");
-      newScript.async = true;
+  function initGiscus() {
+    const container = document.getElementById("giscus-container");
+    if (!container) return;
 
-      giscusScript.replaceWith(newScript);
-    }
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "kavaj88/bit-river");
+    script.setAttribute("data-repo-id", "R_kgDOQ2YT-A");
+    script.setAttribute("data-category", "普通评论");
+    script.setAttribute("data-category-id", "DIC_kwDOQ2YT-M4C1Ba8");
+    script.setAttribute("data-mapping", "specific");
+    script.setAttribute("data-term", window.location.pathname.split("/").pop());
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("data-lang", "zh-CN");
+    script.setAttribute("data-loading", "lazy");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+
+    container.appendChild(script);
   }
+
+  // 初始加载
+  initGiscus();
 
   // 监听 Astro 页面切换事件
   document.addEventListener("astro:after-swap", () => {
     window.scrollTo({ left: 0, top: 0, behavior: "instant" });
-    reinitializeGiscus(); // 重新初始化 Giscus
+    initGiscus(); // 重新初始化 Giscus
   });
 </script>
