@@ -194,7 +194,7 @@ const slug = getSlugFromPost(post);
   <Footer />
 </Layout>
 
-<script is:inline data-astro-rerun>
+<script is:inline data-astro-rerun define:vars={{ slug }}>
   /** Create a progress indicator
    *  at the top */
   function createProgressBar() {
@@ -322,7 +322,7 @@ const slug = getSlugFromPost(post);
     script.setAttribute("data-category", "普通评论");
     script.setAttribute("data-category-id", "DIC_kwDOQ2YT-M4C1Ba8");
     script.setAttribute("data-mapping", "specific");
-    script.setAttribute("data-term", window.location.pathname.split("/").pop());
+    script.setAttribute("data-term", slug);
     script.setAttribute("data-strict", "0");
     script.setAttribute("data-reactions-enabled", "1");
     script.setAttribute("data-emit-metadata", "0");
